@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lap"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_brand"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:textColor="@color/colorWhite"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/iv_brand"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Email"
+        android:textColorHint="@color/colorWhite"
+
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:letterSpacing="0.1"
+        android:background="@color/colorPrimaryDarkOpacity"
+
+        tools:ignore="Autofill"
+        android:labelFor="@id/et_email"
+
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:textColor="@color/colorWhite"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Password"
+        android:textColorHint="@color/colorWhite"
+
+        android:drawableStart="@drawable/ic_key"
+        android:drawablePadding="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:letterSpacing="0.1"
+        android:background="@color/colorPrimaryDarkOpacity"
+
+        tools:ignore="Autofill"
+        android:labelFor="@id/et_password"
+
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/bt_sign_in"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:letterSpacing="0.2"
+
+        android:contentDescription="@string/app_text"
+        android:text="@string/btn_signin" />
+
+    <Button
+        android:id="@+id/bt_sign_up"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/bt_sign_in"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:letterSpacing="0.2"
+
+        android:contentDescription="@string/app_text"
+        android:text="@string/btn_signup" />
+
+    <TextView
+        android:id="@+id/tv_copyrights"
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_sign_up"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+
+        android:letterSpacing="0.1"
+        android:text="@string/app_copyrights" />
+
+</RelativeLayout>

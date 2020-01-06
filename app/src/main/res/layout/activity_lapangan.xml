@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_1"
+    android:orientation="vertical"
+    tools:context=".LapanganActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:id="@+id/date"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="15dp">
+
+        <Button
+            android:id="@+id/addLapangan"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:drawablePadding="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:letterSpacing="0.1"
+            android:background="@color/colorAccent"
+            android:text="@string/tambah"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/Kategori"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:drawablePadding="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:letterSpacing="0.1"
+            android:background="@color/colorAccent"
+            android:text="@string/kategori"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_search"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:letterSpacing="0.1"
+            android:inputType="textAutoComplete"
+            android:hint="Search Produk"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_lapangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_row_lapangan"/>
+
+</LinearLayout>

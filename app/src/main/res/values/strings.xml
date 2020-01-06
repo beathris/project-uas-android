@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SL Futsal</string>
+    <string name="app_text">App descripttion</string>
+    <string name="app_copyrights">Copyrights &#169; 2019 Kelompok 1</string>
+
+    <string name="btn_signin">Sign In</string>
+    <string name="btn_signup">Sign Up</string>
+    <string name="simpan">Simpan</string>
+    <string name="email">sewalapangan@gmail.com</string>
+    <string name="harga">Harga</string>
+    <string name="lap_name">Nama Lapangan</string>
+    <string name="laporan">Laporan</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="pesan_sekarang">Pesan Sekarang</string>
+    <string name="tgl">Tgl</string>
+    <string name="jam">Jam</string>
+    <string name="penyewa">Penyewa</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="total">Total</string>
+    <string name="status">Status</string>
+    <string name="kontak">Kontak</string>
+    <string name="batal">Batal</string>
+    <string name="lap">Lapangan</string>
+    <string name="kategori">Kategori</string>
+    <string name="nama_kategori">Nama Kategori</string>
+    <string name="luas">Luas</string>
+    <string name="tambah">Tambah</string>
+</resources>

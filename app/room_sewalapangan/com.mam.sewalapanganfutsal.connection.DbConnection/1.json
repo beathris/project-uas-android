@@ -1,0 +1,272 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d3387d888d172939ad8c44b6de07706b",
+    "entities": [
+      {
+        "tableName": "lapangan",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nama` TEXT NOT NULL, `harga` REAL NOT NULL, `deskripsi` TEXT NOT NULL, `kategori_id` INTEGER NOT NULL, FOREIGN KEY(`kategori_id`) REFERENCES `kategori`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nama",
+            "columnName": "nama",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "harga",
+            "columnName": "harga",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deskripsi",
+            "columnName": "deskripsi",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kategoriId",
+            "columnName": "kategori_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_lapangan_id",
+            "unique": false,
+            "columnNames": [
+              "id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_lapangan_id` ON `${TABLE_NAME}` (`id`)"
+          },
+          {
+            "name": "index_lapangan_kategori_id",
+            "unique": false,
+            "columnNames": [
+              "kategori_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_lapangan_kategori_id` ON `${TABLE_NAME}` (`kategori_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "kategori",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "kategori_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "kategori",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nama` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nama",
+            "columnName": "nama",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_kategori_id",
+            "unique": false,
+            "columnNames": [
+              "id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_kategori_id` ON `${TABLE_NAME}` (`id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "toko",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`npwp` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nama` TEXT NOT NULL, `alamat` TEXT NOT NULL, `email` TEXT NOT NULL, `password` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "npwp",
+            "columnName": "npwp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nama",
+            "columnName": "nama",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "alamat",
+            "columnName": "alamat",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "npwp"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_toko_npwp",
+            "unique": false,
+            "columnNames": [
+              "npwp"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_toko_npwp` ON `${TABLE_NAME}` (`npwp`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "nota",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `penyewa` TEXT NOT NULL, `tanggal` INTEGER NOT NULL, `subtotal` REAL, `tagihan` REAL, `bayar` REAL, `kembalian` REAL, `status` TEXT NOT NULL, `toko_npwp` INTEGER, FOREIGN KEY(`toko_npwp`) REFERENCES `toko`(`npwp`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "penyewa",
+            "columnName": "penyewa",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tanggal",
+            "columnName": "tanggal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subtotal",
+            "columnName": "subtotal",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tagihan",
+            "columnName": "tagihan",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bayar",
+            "columnName": "bayar",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "kembalian",
+            "columnName": "kembalian",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "toko_npwp",
+            "columnName": "toko_npwp",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_nota_id",
+            "unique": false,
+            "columnNames": [
+              "id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_nota_id` ON `${TABLE_NAME}` (`id`)"
+          },
+          {
+            "name": "index_nota_toko_npwp",
+            "unique": false,
+            "columnNames": [
+              "toko_npwp"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_nota_toko_npwp` ON `${TABLE_NAME}` (`toko_npwp`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "toko",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "toko_npwp"
+            ],
+            "referencedColumns": [
+              "npwp"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd3387d888d172939ad8c44b6de07706b')"
+    ]
+  }
+}

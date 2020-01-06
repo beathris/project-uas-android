@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_1"
+    tools:context=".DashboardActivity">
+
+    <ImageView
+        android:id="@+id/iv_brand"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+
+        app:srcCompat="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:id="@+id/layout1"
+        android:layout_below="@+id/iv_brand"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp">
+
+            <Button
+                android:id="@+id/btnTransaksi"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/transaksi"
+                android:padding="5dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@android:color/white"
+                android:text="Transaksi"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnLapangan"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/field"
+                android:padding="5dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@android:color/white"
+                android:text="  Lapangan"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:id="@+id/layout2"
+        android:layout_below="@+id/layout1"
+        android:layout_marginTop="25dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp">
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/history"
+                android:padding="5dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@android:color/white"
+                android:text=" History"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnLaporan"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/report"
+                android:padding="5dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@android:color/white"
+                android:text=" Laporan"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/layout3"
+        android:layout_below="@+id/layout2"
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:id="@+id/btnToko"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/store2"
+            android:padding="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:text="Toko"/>
+    </LinearLayout>
+
+</RelativeLayout>
